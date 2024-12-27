@@ -1,14 +1,30 @@
-DebuggingEnabled = true
+DebuggingEnabled = false
 
 PassivesRef = {
-    TR_BasePassiveData = true,
     TR_LongbowRange = true,
     TR_HeavyCrossbowRange = true,
     TR_ShortbowRange = true,
-    TR_HandCrossbowRange = true
+    TR_HandCrossbowRange = true,
+    TR_DartRange = true
+}
+
+WeaponBoosts = {
+    BG3 = "IF(not TR_LongRangeCheckOriginal(context.Source)):Disadvantage(AttackRoll)",
+    DnD5e = "IF(not TR_LongRangeCheck(context.Source)):Disadvantage(AttackRoll)"
+}
+
+WeaponPassives = {
+    WPN_Dart = "TR_DartRange",
+    WPN_Sling = "TR_HandCrossbowRange",
+    WPN_HandCrossbow = "TR_HandCrossbowRange",
+    WPN_LightCrossbow = "TR_ShortbowRange",
+    WPN_Shortbow = "TR_ShortbowRange",
+    WPN_HeavyCrossbow = "TR_HeavyCrossbowRange",
+    WPN_Longbow = "TR_LongbowRange"
 }
 
 ---@param message string
+---@vararg any
 function Log(message, ...)
     if DebuggingEnabled then
         local formattedMessage = string.format(message, ...)
@@ -36,6 +52,8 @@ function ReloadStats()
     end
 end
 
+---@param fileName string
+---@param data any
 function Dump(fileName, data)
     if DebuggingEnabled then
         local file = "Dumps/" .. fileName .. ".json"
@@ -45,6 +63,8 @@ function Dump(fileName, data)
 end
 
 ---@param time integer
+---@param call function
+---@vararg any
 function SetTimer(time, call, ...)
     local startTime = Ext.Utils.MonotonicTime()
     local event

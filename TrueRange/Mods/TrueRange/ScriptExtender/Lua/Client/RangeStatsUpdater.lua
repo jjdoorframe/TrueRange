@@ -1,3 +1,4 @@
+--- Recursively add weapons to a table with references to their parent stats
 ---@param weapon StatsObject
 ---@return string | boolean
 function AddWeaponsToTable(weapon)
@@ -26,12 +27,12 @@ function AddWeaponsToTable(weapon)
     return false
 end
 
+--- Add PassivedOnEquip to every ranged weapon
 function UpdateWeapons()
     if Config == nil then
         LoadConfig()
     end
 
-    CachedWeapons = {}
     local weapons = Ext.Stats.GetStats("Weapon")
 
     for _, name in ipairs(weapons) do
@@ -47,10 +48,12 @@ function UpdateWeapons()
             local originalString = tostring(stats.PassivesOnEquip:gsub("%s*$", ""))
 
             if not string.find(originalString, passive) then
-                if originalString:sub(-1) ~= ";" then
+                Log("Updating weapon: %s", weapon)
+
+                if originalString:sub(-1) ~= ";" and originalString ~= "" then
                     originalString = originalString .. ";"
                 end
-    
+
                 stats.PassivesOnEquip = originalString .. passive
                 stats:Sync()
             end
@@ -58,6 +61,7 @@ function UpdateWeapons()
     end
 end
 
+--- Update passives with boosts depending on ruleset setting
 function UpdateBoosts()
     if Config == nil then
         LoadConfig()
@@ -69,6 +73,8 @@ function UpdateBoosts()
         local stats = Ext.Stats.Get(passive)
         stats.Boosts = boost
         stats:Sync()
+
+        Log("Updated passive: %s", passive)
     end
 end
 
@@ -83,21 +89,10 @@ function SettingChanged()
 end
 
 Ext.Events.StatsLoaded:Subscribe(function()
-    UpdateBoosts()
+    if CachedWeapons == nil then
+        CachedWeapons = {}
+    end
+
     UpdateWeapons()
+    UpdateBoosts()
 end)
-
-WeaponBoosts = {
-    BG3 = "IF(TR_LongRangeCheckOriginal(context.Source) == false):Disadvantage(AttackRoll)",
-    DnD5e = "IF(TR_LongRangeCheck(context.Source) == false):Disadvantage(AttackRoll)"
-}
-
-WeaponPassives = {
-    WPN_Dart = "TR_DartRange",
-    WPN_Sling = "TR_HandCrossbowRange",
-    WPN_HandCrossbow = "TR_HandCrossbowRange",
-    WPN_LightCrossbow = "TR_ShortbowRange",
-    WPN_Shortbow = "TR_ShortbowRange",
-    WPN_HeavyCrossbow = "TR_HeavyCrossbowRange",
-    WPN_Longbow = "TR_LongbowRange"
-}

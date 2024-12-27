@@ -1,8 +1,16 @@
+// khn functions don't get loaded if unused I guess?
+new entry "TR_DummyPassiveOriginal"
+type "PassiveData"
+data "Boosts" "IF(not TR_LongRangeCheckOriginal(context.Source)):Disadvantage(AttackRoll)"
+
+new entry "TR_DummyPassiveMod"
+type "PassiveData"
+data "Boosts" "IF(not TR_LongRangeCheck(context.Source)):Disadvantage(AttackRoll)"
+
 new entry "TR_BasePassiveData"
 type "PassiveData"
 data "DisplayName" "h59c41bc5gb041g465egbf37gf2eeb913a3f1;1"
-data "Properties" "Highlighted"
-data "Boosts" "IF(not TR_LongRangeCheck(context.Source)):Disadvantage(AttackRoll)"
+data "Properties" "IsHidden"
 
 new entry "TR_LongbowRange"
 type "PassiveData"

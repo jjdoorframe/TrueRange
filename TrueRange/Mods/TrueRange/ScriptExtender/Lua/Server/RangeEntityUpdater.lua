@@ -1,3 +1,4 @@
+--- Reequip weapons to reapply passives because they get cached
 function UpdateEntities()
     local entities = Ext.Entity.GetAllEntitiesWithComponent("PassiveContainer")
     local equipTable = {}
@@ -26,9 +27,11 @@ function UpdateEntities()
     SetTimer(10, Equip)
 end
 
+
 Ext.Osiris.RegisterListener("LevelGameplayStarted", 2, "after", function()
     UpdateEntities()
 end)
+
 
 Ext.RegisterNetListener("TrueRange_UpdateEntities", function()
     UpdateEntities()
