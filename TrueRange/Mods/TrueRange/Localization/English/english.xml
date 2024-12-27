@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<contentList xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<content contentuid="h3996d2b36b9a4d3fa94ff19a147bb148e6eb" version="1">True Range</content>
+<content contentuid="h0fc7a2caf074440ba135372d046ee9af714a" version="1">5e RAW weapon range will be used to calculate disadvantage distance.</content>
+<content contentuid="h17bd4c2427d04f37b37919b1a81cd76db334" version="1">Baldur's Gate 3 weapon range will be used to calculate disadvantage distance.</content>
+<content contentuid="hc136639122dd472eafee3c5e0f81cdaf444f" version="1">Ranged Attacks</content>
+<content contentuid="ha02696ea6b1e4c7c8d1b06b72bc732887d8e" version="1">Weapon</content>
+<content contentuid="hbf3387ef7c174b3d8281a9c16de832f39d2c" version="1">5e Range</content>
+<content contentuid="h4ef5c2fcea564a34980ace626bbd7b11539b" version="1">BG3 Range</content>
+<content contentuid="h22a63f4f1e774043bc612429dea6f6ec7be2" version="1">Sling</content>
+<content contentuid="h02467c46df18405e96fe5a9ba8e523d3g3f1" version="1">Hand Crossbow</content>
+<content contentuid="h5eca325a16fc406181e7496625053927f443" version="1">Light Crossbow</content>
+<content contentuid="ha83b1a402a7e471887569d044c31f106ddbb" version="1">Shortbow</content>
+<content contentuid="h91fe8bc2fdd54676a90754a24ba58867fe8f" version="1">Heavy Crossbow</content>
+<content contentuid="hbee2c13d89554007ba468e05479862b67809" version="1">Longbow</content>
+<content contentuid="h49eefe4b8c2144a8a9e036c8aca2a8b24768" version="1">Long</content>
+<content contentuid="h18cd1524352e40b2a15d7b93271d079379fe" version="1">Normal</content>
+<content contentuid="h659ae2256cd24c2f99da84094a1f7f492b45" version="1">Some ranged attacks, such as those made with a longbow or a shortbow, have two ranges. The smaller number is the normal range, and the larger number is the long range. Your attack roll has disadvantage when your target is beyond normal range, and you can't attack a target beyond the long range.</content>
+<content contentuid="hbfd736c577484956a9d4bd1b651befacbc2e" version="1">Meters</content>
+<content contentuid="hcc48fc6b517944c191106eab6386f0cc85af" version="1">Feet</content>
+<content contentuid="h82de8f22180041e38221c57fef68d95df66e" version="1">Choose Ruleset</content>
+<content contentuid="h06ebc2174ce3473097a51944ea049b0b1564" version="1">5e Range</content>
+<content contentuid="h4edf64fadacd4e3785f5765c318ee9aa6d07" version="1">BG3 Range</content>
+<content contentuid="h6cf3b86b512547fc9554d34af24c4a0b3cgb" version="1">m</content>
+<content contentuid="h883212c652684c7989e07c769aab655ee6b4" version="1">ft</content>
+</contentList>

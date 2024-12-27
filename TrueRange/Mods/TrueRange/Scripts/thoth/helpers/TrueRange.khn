@@ -1,0 +1,19 @@
+function TR_LongRangeCheck(entity)
+    entity = entity or context.Source
+    return HasPassive('Sharpshooter_Bonuses', entity)
+        | (HasPassive('TR_LongbowRange', entity) & ~DistanceToGreaterThan(context.SourcePosition, context.TargetPosition, 30))
+        | (HasPassive('TR_HeavyCrossbowRange', entity) & ~DistanceToGreaterThan(context.SourcePosition, context.TargetPosition, 30))
+        | (HasPassive('TR_ShortbowRange', entity) & ~DistanceToGreaterThan(context.SourcePosition, context.TargetPosition, 24))
+        | (HasPassive('TR_HandCrossbowRange', entity) & ~DistanceToGreaterThan(context.SourcePosition, context.TargetPosition, 9))
+        | (HasPassive('TR_DartRange', entity) & ~DistanceToGreaterThan(context.SourcePosition, context.TargetPosition, 6))
+end
+
+function TR_LongRangeCheckOriginal(entity)
+    entity = entity or context.Source
+    return HasPassive('Sharpshooter_Bonuses', entity)
+        | (HasPassive('TR_LongbowRange', entity) & ~DistanceToGreaterThan(context.SourcePosition, context.TargetPosition, 25))
+        | (HasPassive('TR_HeavyCrossbowRange', entity) & ~DistanceToGreaterThan(context.SourcePosition, context.TargetPosition, 22))
+        | (HasPassive('TR_ShortbowRange', entity) & ~DistanceToGreaterThan(context.SourcePosition, context.TargetPosition, 18))
+        | (HasPassive('TR_HandCrossbowRange', entity) & ~DistanceToGreaterThan(context.SourcePosition, context.TargetPosition, 14))
+        | (HasPassive('TR_DartRange', entity) & ~DistanceToGreaterThan(context.SourcePosition, context.TargetPosition, 12))
+end

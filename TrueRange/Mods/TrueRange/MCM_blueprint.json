@@ -1,0 +1,14 @@
+{
+    "SchemaVersion": 1,
+    "Optional": true,
+    "ModName": "True Range",
+    "Tabs": [
+        {
+            "TabId": "truerange_main",
+            "TabName": "True Range",
+            "Handles": {
+                "NameHandle": "h3996d2b36b9a4d3fa94ff19a147bb148e6eb"
+            }
+        }
+    ]
+}

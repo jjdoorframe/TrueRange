@@ -1,0 +1,25 @@
+new entry "TR_BasePassiveData"
+type "PassiveData"
+data "DisplayName" "h59c41bc5gb041g465egbf37gf2eeb913a3f1;1"
+data "Properties" "Highlighted"
+data "Boosts" "IF(not TR_LongRangeCheck(context.Source)):Disadvantage(AttackRoll)"
+
+new entry "TR_LongbowRange"
+type "PassiveData"
+using "TR_BasePassiveData"
+
+new entry "TR_HeavyCrossbowRange"
+type "PassiveData"
+using "TR_BasePassiveData"
+
+new entry "TR_ShortbowRange"
+type "PassiveData"
+using "TR_BasePassiveData"
+
+new entry "TR_HandCrossbowRange"
+type "PassiveData"
+using "TR_BasePassiveData"
+
+new entry "TR_DartRange"
+type "PassiveData"
+using "TR_BasePassiveData"
