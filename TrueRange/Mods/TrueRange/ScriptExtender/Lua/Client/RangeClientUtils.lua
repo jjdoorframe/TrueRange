@@ -92,6 +92,31 @@ CommonRanges = {{
     }
 }}
 
+StringTable = {
+    Ruleset5e = "h0fc7a2caf074440ba135372d046ee9af714a",
+    RulesetBG3 = "h17bd4c2427d04f37b37919b1a81cd76db334",
+    RangedAttacks = "hc136639122dd472eafee3c5e0f81cdaf444f",
+    Weapon = "ha02696ea6b1e4c7c8d1b06b72bc732887d8e",
+    RulesRaw = "hbf3387ef7c174b3d8281a9c16de832f39d2c",
+    RulesBg = "h4ef5c2fcea564a34980ace626bbd7b11539b",
+    Sling = "h22a63f4f1e774043bc612429dea6f6ec7be2",
+    HandCrossbow = "h02467c46df18405e96fe5a9ba8e523d3g3f1",
+    LightCrossbow = "h5eca325a16fc406181e7496625053927f443",
+    Shortbow = "ha83b1a402a7e471887569d044c31f106ddbb",
+    HeavyCrossbow = "h91fe8bc2fdd54676a90754a24ba58867fe8f",
+    Longbow = "hbee2c13d89554007ba468e05479862b67809",
+    Normal = "h18cd1524352e40b2a15d7b93271d079379fe",
+    Long = "h49eefe4b8c2144a8a9e036c8aca2a8b24768",
+    RefText = "h659ae2256cd24c2f99da84094a1f7f492b45",
+    meters = "hbfd736c577484956a9d4bd1b651befacbc2e",
+    feet = "hcc48fc6b517944c191106eab6386f0cc85af",
+    ChooseRuleset = "h82de8f22180041e38221c57fef68d95df66e",
+    DnD5e = "h06ebc2174ce3473097a51944ea049b0b1564",
+    BG3 = "h4edf64fadacd4e3785f5765c318ee9aa6d07",
+    ft = "h883212c652684c7989e07c769aab655ee6b4",
+    m = "h6cf3b86b512547fc9554d34af24c4a0b3cgb",
+}
+
 function Scale()
     return Ext.IMGUI.GetViewportSize()[2] / 2160
 end
