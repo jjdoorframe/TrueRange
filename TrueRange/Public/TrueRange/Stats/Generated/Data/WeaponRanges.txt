@@ -39,3 +39,24 @@ type "Weapon"
 using "WPN_Longbow"
 data "WeaponRange" "3000"
 data "Damage Range" "3000"
+
+//Artificer
+new entry "WPN_Armorer_Gauntlets_Infiltrator_Right"
+type "Weapon"
+using "WPN_Armorer_Gauntlets_Infiltrator_Right"
+data "WeaponRange" "3000"
+
+new entry "WPN_Armorer_Gauntlets_Infiltrator_Left"
+type "Weapon"
+using "WPN_Armorer_Gauntlets_Infiltrator_Left"
+data "WeaponRange" "3000"
+
+new entry "WPN_Artillerist_Pistol_Firearm"
+type "Weapon"
+using "WPN_Artillerist_Pistol_Firearm"
+data "WeaponRange" "3000"
+
+new entry "WPN_Artificer_Rifle"
+type "Weapon"
+using "WPN_Artificer_Rifle"
+data "WeaponRange" "3000"

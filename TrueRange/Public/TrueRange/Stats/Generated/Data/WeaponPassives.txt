@@ -31,3 +31,24 @@ using "TR_BasePassiveData"
 new entry "TR_DartRange"
 type "PassiveData"
 using "TR_BasePassiveData"
+
+// Artificer
+new entry "TR_ArtificerCannonRange"
+type "PassiveData"
+using "TR_BasePassiveData"
+
+new entry "TR_ArtificerCannonTwoRange"
+type "PassiveData"
+using "TR_BasePassiveData"
+
+new entry "TR_ArtificerGauntletRange"
+type "PassiveData"
+using "TR_BasePassiveData"
+
+new entry "TR_ArtificerPistolRange"
+type "PassiveData"
+using "TR_BasePassiveData"
+
+new entry "TR_ArtificerRifleRange"
+type "PassiveData"
+using "TR_BasePassiveData"

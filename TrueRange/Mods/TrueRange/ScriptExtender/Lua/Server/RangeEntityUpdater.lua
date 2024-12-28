@@ -25,14 +25,44 @@ function UpdateEntities()
 
     -- It takes longer than a frame for a passive applied from equipment to be removed from entity
     SetTimer(10, Equip)
+
+    Log("Updated entities")
+end
+
+function SavePersitence()
+    if CachedRuleset ~= nil then
+        Ext.Vars.GetModVariables(ModuleUUID).CachedSetting = CachedRuleset
+    end
 end
 
 
 Ext.Osiris.RegisterListener("LevelGameplayStarted", 2, "after", function()
-    UpdateEntities()
+    if Config ~= nil and CachedRuleset ~= nil and Config.Ruleset ~= CachedRuleset then
+        UpdateEntities()
+    end
 end)
 
 
-Ext.RegisterNetListener("TrueRange_UpdateEntities", function()
+Ext.RegisterNetListener("TrueRange_OnSettingChanged", function(call, payload)
     UpdateEntities()
+
+    if payload ~= nil then
+        CachedRuleset = payload
+        SavePersitence()
+    end
+end)
+
+Ext.Events.SessionLoaded:Subscribe(function()
+    local modvars = Ext.Vars.GetModVariables(ModuleUUID)
+    LoadConfig()
+
+    if CachedRuleset == nil then
+        if modvars and modvars.CachedSetting then
+            CachedRuleset = modvars.CachedSetting
+        elseif Config and Config.Ruleset then
+            CachedRuleset = Config.Ruleset
+        end
+    end
+
+    SavePersitence()
 end)

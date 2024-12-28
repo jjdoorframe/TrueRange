@@ -1,103 +1,96 @@
-RangeOrder = {
-    "Dart",
-    "Sling",
-    "HandCrossbow",
-    "LightCrossbow",
-    "Shortbow",
-    "HeavyCrossbow",
-    "Longbow"
-}
+--- @class RangeData
+--- @field Name string
+--- @field NormalRaw integer[]
+--- @field LongRaw integer[]
+--- @field NormalBg integer[]
+--- @field LongBg integer[]
 
-RangeRef = {
-    Meters = {
-        Dart = {
-            NormalRaw = 6,
-            LongRaw = 18,
-            NormalBg = 12,
-            LongBg = 30,
+--- @class RangeTable
+--- @field Name string
+--- @field ModUUID string | nil
+--- @field Data RangeData[]
+
+--- @type RangeTable[]
+CommonRanges = {{
+    Name = "Base",
+    Data = {
+        {
+            Name = "Dart",
+            NormalRaw = {6, 20},
+            LongRaw = {18, 60},
+            NormalBg = {12, 40},
+            LongBg = {30, 100}
         },
-        Sling = {
-            NormalRaw = 9,
-            LongRaw = 36,
-            NormalBg = 14,
-            LongBg = 30,
+        {
+            Name = "Sling",
+            NormalRaw = {9, 30},
+            LongRaw = {36, 120},
+            NormalBg = {14, 46},
+            LongBg = {30, 100}
         },
-        HandCrossbow = {
-            NormalRaw = 9,
-            LongRaw = 36,
-            NormalBg = 14,
-            LongBg = 30,
+        {
+            Name = "HandCrossbow",
+            NormalRaw = {9, 30},
+            LongRaw = {36, 120},
+            NormalBg = {14, 46},
+            LongBg = {30, 100}
         },
-        LightCrossbow = {
-            NormalRaw = 24,
-            LongRaw = 97,
-            NormalBg = 18,
-            LongBg = 30,
+        {
+            Name = "LightCrossbow",
+            NormalRaw = {24, 80},
+            LongRaw = {97, 320},
+            NormalBg = {18, 59},
+            LongBg = {30, 100}
         },
-        Shortbow = {
-            NormalRaw = 24,
-            LongRaw = 97,
-            NormalBg = 18,
-            LongBg = 30,
+        {
+            Name = "Shortbow",
+            NormalRaw = {24, 80},
+            LongRaw = {97, 320},
+            NormalBg = {18, 59},
+            LongBg = {30, 100}
         },
-        HeavyCrossbow = {
-            NormalRaw = 30,
-            LongRaw = 121,
-            NormalBg = 22,
-            LongBg = 30,
+        {
+            Name = "HeavyCrossbow",
+            NormalRaw = {30, 100},
+            LongRaw = {121, 400},
+            NormalBg = {22, 72},
+            LongBg = {30, 100}
         },
-        Longbow = {
-            NormalRaw = 45,
-            LongRaw = 182,
-            NormalBg = 25,
-            LongBg = 30,
-        }
-    },
-    Feet = {
-        Dart = {
-            NormalRaw = 20,
-            LongRaw = 60,
-            NormalBg = 40,
-            LongBg = 100,
-        },
-        Sling = {
-            NormalRaw = 30,
-            LongRaw = 120,
-            NormalBg = 46,
-            LongBg = 100,
-        },
-        HandCrossbow = {
-            NormalRaw = 30,
-            LongRaw = 120,
-            NormalBg = 46,
-            LongBg = 100,
-        },
-        LightCrossbow = {
-            NormalRaw = 80,
-            LongRaw = 320,
-            NormalBg = 59,
-            LongBg = 100,
-        },
-        Shortbow = {
-            NormalRaw = 80,
-            LongRaw = 320,
-            NormalBg = 59,
-            LongBg = 100,
-        },
-        HeavyCrossbow = {
-            NormalRaw = 100,
-            LongRaw = 400,
-            NormalBg = 72,
-            LongBg = 100,
-        },
-        Longbow = {
-            NormalRaw = 150,
-            LongRaw = 600,
-            NormalBg = 82,
-            LongBg = 100,
+        {
+            Name = "Longbow",
+            NormalRaw = {45, 150},
+            LongRaw = {182, 600},
+            NormalBg = {25, 82},
+            LongBg = {30, 100}
         }
     }
-}
+}, {
+    Name = "Artificer",
+    ModUUID = "88fadf2c-152d-404e-b863-c12273559e1c",
+    Data = {
+        {
+            Name = "FlintlockPistol",
+            NormalRaw = {9, 30},
+            LongRaw = {27, 90},
+            NormalBg = {15, 49},
+            LongBg = {30, 100}
+        },
+        {
+            Name = "FlintlockMusket",
+            NormalRaw = {12, 40},
+            LongRaw = {37, 120},
+            NormalBg = {18, 59},
+            LongBg = {30, 100}
+        },
+        {
+            Name = "LightningLauncher",
+            NormalRaw = {28, 90},
+            LongRaw = {92, 300},
+            NormalBg = {15, 49},
+            LongBg = {30, 100}
+        }
+    }
+}}
 
 function Scale()
     return Ext.IMGUI.GetViewportSize()[2] / 2160
@@ -140,6 +133,10 @@ end
 ---@param key string
 function GetString(key)
     local stringOut = key
+
+    if StringTable[key] == nil then
+        return stringOut
+    end
 
     stringOut = Ext.Loca.GetTranslatedString(StringTable[key])
 

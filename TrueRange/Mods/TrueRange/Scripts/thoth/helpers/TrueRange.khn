@@ -1,19 +1,27 @@
 function TR_LongRangeCheck(entity)
     entity = entity or context.Source
-    return HasPassive('Sharpshooter_Bonuses', entity)
+    return ~IsRangedWeaponAttack()
+        | HasPassive('Sharpshooter_Bonuses', entity)
         | (HasPassive('TR_LongbowRange', entity) & ~DistanceToGreaterThan(context.SourcePosition, context.TargetPosition, 30))
         | (HasPassive('TR_HeavyCrossbowRange', entity) & ~DistanceToGreaterThan(context.SourcePosition, context.TargetPosition, 30))
         | (HasPassive('TR_ShortbowRange', entity) & ~DistanceToGreaterThan(context.SourcePosition, context.TargetPosition, 24))
         | (HasPassive('TR_HandCrossbowRange', entity) & ~DistanceToGreaterThan(context.SourcePosition, context.TargetPosition, 9))
         | (HasPassive('TR_DartRange', entity) & ~DistanceToGreaterThan(context.SourcePosition, context.TargetPosition, 6))
+        | (HasPassive('TR_ArtificerGauntletRange', entity) & ~DistanceToGreaterThan(context.SourcePosition, context.TargetPosition, 28))
+        | (HasPassive('TR_ArtificerPistolRange', entity) & ~DistanceToGreaterThan(context.SourcePosition, context.TargetPosition, 9))
+        | (HasPassive('TR_ArtificerRifleRange', entity) & ~DistanceToGreaterThan(context.SourcePosition, context.TargetPosition, 12))
 end
 
 function TR_LongRangeCheckOriginal(entity)
     entity = entity or context.Source
-    return HasPassive('Sharpshooter_Bonuses', entity)
+    return ~IsRangedWeaponAttack()
+        | HasPassive('Sharpshooter_Bonuses', entity)
         | (HasPassive('TR_LongbowRange', entity) & ~DistanceToGreaterThan(context.SourcePosition, context.TargetPosition, 25))
         | (HasPassive('TR_HeavyCrossbowRange', entity) & ~DistanceToGreaterThan(context.SourcePosition, context.TargetPosition, 22))
         | (HasPassive('TR_ShortbowRange', entity) & ~DistanceToGreaterThan(context.SourcePosition, context.TargetPosition, 18))
         | (HasPassive('TR_HandCrossbowRange', entity) & ~DistanceToGreaterThan(context.SourcePosition, context.TargetPosition, 14))
         | (HasPassive('TR_DartRange', entity) & ~DistanceToGreaterThan(context.SourcePosition, context.TargetPosition, 12))
+        | (HasPassive('TR_ArtificerGauntletRange', entity) & ~DistanceToGreaterThan(context.SourcePosition, context.TargetPosition, 15))
+        | (HasPassive('TR_ArtificerPistolRange', entity) & ~DistanceToGreaterThan(context.SourcePosition, context.TargetPosition, 15))
+        | (HasPassive('TR_ArtificerRifleRange', entity) & ~DistanceToGreaterThan(context.SourcePosition, context.TargetPosition, 18))
 end

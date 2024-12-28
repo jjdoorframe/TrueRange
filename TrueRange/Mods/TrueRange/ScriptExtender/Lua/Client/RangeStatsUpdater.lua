@@ -24,6 +24,19 @@ function AddWeaponsToTable(weapon)
         end
     end
 
+    -- Self inheritence in mods (and Honour module) removes references in Using fields
+    if weapon["Proficiency Group"] then
+        local proficiencies = weapon["Proficiency Group"]
+
+        for _, proficiency in ipairs(proficiencies) do
+            if WeaponProficiencies[proficiency] then
+                local result = WeaponProficiencies[proficiency]
+                CachedWeapons[weapon.Name] = result
+                return result
+            end
+        end
+    end
+
     return false
 end
 
@@ -82,7 +95,7 @@ function SettingChanged()
     UpdateBoosts()
 
     local function DelayMessage()
-        Ext.Net.PostMessageToServer("TrueRange_UpdateEntities", "")
+        Ext.Net.PostMessageToServer("TrueRange_OnSettingChanged", Config.Ruleset)
     end
 
     SetTimer(100, DelayMessage)

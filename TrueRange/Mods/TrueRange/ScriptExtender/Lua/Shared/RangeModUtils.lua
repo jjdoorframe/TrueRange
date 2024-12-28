@@ -5,7 +5,10 @@ PassivesRef = {
     TR_HeavyCrossbowRange = true,
     TR_ShortbowRange = true,
     TR_HandCrossbowRange = true,
-    TR_DartRange = true
+    TR_DartRange = true,
+    TR_ArtificerGauntletRange = true,
+    TR_ArtificerPistolRange = true,
+    TR_ArtificerRifleRange = true
 }
 
 WeaponBoosts = {
@@ -20,7 +23,19 @@ WeaponPassives = {
     WPN_LightCrossbow = "TR_ShortbowRange",
     WPN_Shortbow = "TR_ShortbowRange",
     WPN_HeavyCrossbow = "TR_HeavyCrossbowRange",
-    WPN_Longbow = "TR_LongbowRange"
+    WPN_Longbow = "TR_LongbowRange",
+    WPN_Armorer_Gauntlets_Infiltrator_Right = "TR_ArtificerGauntletRange",
+    WPN_Armorer_Gauntlets_Infiltrator_Left = "TR_ArtificerGauntletRange",
+    WPN_Artillerist_Pistol_Firearm = "TR_ArtificerPistolRange",
+    WPN_Artificer_Rifle = "TR_ArtificerRifleRange"
+}
+
+WeaponProficiencies = {
+    HandCrossbows = "WPN_HandCrossbow",
+    LightCrossbows = "WPN_LightCrossbow",
+    Shortbow = "WPN_Shortbow",
+    HeavyCrossbows = "WPN_HeavyCrossbow",
+    Longbows = "WPN_Longbow",
 }
 
 ---@param message string
