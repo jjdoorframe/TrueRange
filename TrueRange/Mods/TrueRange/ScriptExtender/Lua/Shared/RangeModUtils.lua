@@ -33,7 +33,7 @@ WeaponPassives = {
 WeaponProficiencies = {
     HandCrossbows = "WPN_HandCrossbow",
     LightCrossbows = "WPN_LightCrossbow",
-    Shortbow = "WPN_Shortbow",
+    Shortbows = "WPN_Shortbow",
     HeavyCrossbows = "WPN_HeavyCrossbow",
     Longbows = "WPN_Longbow",
 }
