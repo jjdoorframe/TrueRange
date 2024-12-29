@@ -60,3 +60,15 @@ new entry "WPN_Artificer_Rifle"
 type "Weapon"
 using "WPN_Artificer_Rifle"
 data "WeaponRange" "3000"
+
+//Elven Weaponry
+
+new entry "EW_Shortbow_Test"
+type "Weapon"
+using "EW_Shortbow_Test"
+data "WeaponRange" "3000"
+
+new entry "EW_Ranger_Longbow"
+type "Weapon"
+using "EW_Ranger_Longbow"
+data "WeaponRange" "3000"
