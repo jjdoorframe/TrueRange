@@ -115,6 +115,8 @@ StringTable = {
     BG3 = "h4edf64fadacd4e3785f5765c318ee9aa6d07",
     ft = "h883212c652684c7989e07c769aab655ee6b4",
     m = "h6cf3b86b512547fc9554d34af24c4a0b3cgb",
+    Dart = "h4959060981eb4eb5b48aa676190966354ga8",
+    DistanceNote = "hdf1ae9221edf4067bec1e0a129e6a45f88d0"
 }
 
 function Scale()

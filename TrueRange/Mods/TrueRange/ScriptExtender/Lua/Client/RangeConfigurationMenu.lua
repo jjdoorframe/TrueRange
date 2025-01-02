@@ -126,7 +126,7 @@ function RangeTab(treeParent)
     refText.TextWrapPos = 0
     mainCell:AddNewLine()
 
-    mainCell:AddText("Note: BG3 has a maximum range cap for all attacks and spells at 30m / 100ft!")
+    mainCell:AddText(GetString("DistanceNote"))
 
     local refTableGroup = mainCell:AddGroup("RefTableGroup")
     WidgetRefs.TableGroup = refTableGroup
